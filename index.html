@@ -21,7 +21,16 @@
       --cta2:#5d9bff;
     }
     *{box-sizing:border-box}
-    html,body{height:100%; overflow-x:hidden}
+    html,body{
+      height:100%;
+      min-height:100%;
+      overflow-x:hidden;
+      background-color: var(--bg-btm);
+    }
+    html{
+      background: radial-gradient(1200px 1200px at 30% 10%, #a6d7ff 0%, transparent 60%),
+                  linear-gradient(180deg,var(--bg-top),var(--bg-btm));
+    }
     body{
       margin:0;
       font-family: Quicksand, system-ui, -apple-system, Segoe UI, Roboto, Arial, "JetBrains Mono", monospace;
@@ -30,6 +39,7 @@
                   linear-gradient(180deg,var(--bg-top),var(--bg-btm));
       overflow-x:hidden;
       position:relative;
+      min-height:100svh;
     }
     .stage{
       min-height:100%;
@@ -37,6 +47,8 @@
       align-items:center;
       justify-content:center;
       padding:48px 16px;
+      position:relative;
+      z-index:1;
     }
     .phone{
       width:390px;
@@ -233,7 +245,7 @@
       inset:0;
       overflow:hidden;
       pointer-events:none;
-      z-index:-1;
+      z-index:0;
     }
     .bubble{
       position:absolute;
